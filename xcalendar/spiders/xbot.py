@@ -6,11 +6,12 @@ class XbotSpider(scrapy.Spider):
     name = 'xbot'
 
     def start_requests(self):
-        yield SeleniumRequest(
-            url="https://www.set.or.th/set/xcalendar.do?eventType=&index=0&language=en&country=US",
-            wait_time=3,
-            callback=self.parse
-        )
+        for i in range(0,6):
+            yield SeleniumRequest(
+                url=f"https://www.set.or.th/set/xcalendar.do?eventType=&index={i}&language=en&country=US",
+                wait_time=3,
+                callback=self.parse
+            )
 
     def parse(self, response):
         table = response.xpath("//div[@class='set-tab-gray separate-content']")
