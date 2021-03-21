@@ -91,7 +91,7 @@ ITEM_PIPELINES = {
 
 # CSV output
 FEED_FORMAT="csv"
-FEED_URI="./db/xmark.csv"
+FEED_URI="./db/xmarks.csv"
 
 # Scrapy-Selenium
 SELENIUM_DRIVER_NAME = 'chrome'
