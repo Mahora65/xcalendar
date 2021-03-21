@@ -89,6 +89,9 @@ ITEM_PIPELINES = {
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = 'scrapy.extensions.httpcache.FilesystemCacheStorage'
 
+# CSV output
+FEED_FORMAT="csv"
+FEED_URI="./db/xmark.csv"
 
 # Scrapy-Selenium
 SELENIUM_DRIVER_NAME = 'chrome'
