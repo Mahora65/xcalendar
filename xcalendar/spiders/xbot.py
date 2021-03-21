@@ -32,6 +32,12 @@ class XbotSpider(scrapy.Spider):
                             "mark": xsymbol[2]
                         }
         navbar = table.xpath(".//ul/li/a/@href").getall()
-        print(navbar)
         gen = (i for i, x in enumerate(navbar) if x == "#")
-        for i in gen: print(i)
+        for i in gen: pos = i
+        if i < len(navbar)-1:
+            abs_url = f"https://www.set.or.th{navbar[pos+1]}"
+            yield SeleniumRequest(
+                url=abs_url,
+                wait_time=3,
+                callback=self.parse
+            )
