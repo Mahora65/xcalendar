@@ -6,12 +6,11 @@ class XbotSpider(scrapy.Spider):
     name = 'xbot'
 
     def start_requests(self):
-        for i in range(0,6):
-            yield SeleniumRequest(
-                url=f"https://www.set.or.th/set/xcalendar.do?eventType=&index={i}&language=en&country=US",
-                wait_time=3,
-                callback=self.parse
-            )
+        yield SeleniumRequest(
+            url=f"https://www.set.or.th/set/xcalendar.do?eventType=&index=0&language=en&country=US",
+            wait_time=3,
+            callback=self.parse
+        )
 
     def parse(self, response):
         table = response.xpath("//div[@class='set-tab-gray separate-content']")
@@ -24,7 +23,7 @@ class XbotSpider(scrapy.Spider):
                 contents = column.xpath(".//div/a/text()").getall()
                 if any(map(str.isdigit, day)):
                     isnum = [int(s) for s in day.split() if s.isdigit()]
-                    date = str(isnum[0]) + " " + month
+                    date = str(isnum[0]) + " " + str(month)
                     content = list(map(str.split, contents))
                     for xsymbol in content:
                         yield {
@@ -32,3 +31,7 @@ class XbotSpider(scrapy.Spider):
                             "symbol": xsymbol[0],
                             "mark": xsymbol[2]
                         }
+        navbar = table.xpath(".//ul/li/a/@href").getall()
+        print(navbar)
+        gen = (i for i, x in enumerate(navbar) if x == "#")
+        for i in gen: print(i)
