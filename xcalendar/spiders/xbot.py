@@ -15,6 +15,8 @@ class XbotSpider(scrapy.Spider):
     def parse(self, response):
         table = response.xpath("//div[@class='set-tab-gray separate-content']")
         month = table.xpath(".//ul/li[@class='active first']/a/text()").get()
+        if month == None:
+            month = table.xpath(".//ul/li[@class='active ']/a/text()").get()
         rows = table.xpath(".//div/div/table/tbody/tr")
         for row in rows:
             columns = row.xpath(".//td")
