@@ -17,7 +17,7 @@ class LineManager:
         self.x_out_dict = {}
 
         for i in range(len(df)):
-            if date.today().strftime("%d %b %Y") == df.loc[i, "date"]:
+            if date.today().strftime("%-d %b %Y") == df.loc[i, "date"]:
                 if df.loc[i, "mark"] in self.x_out_dict:
                     self.x_out_dict[df.loc[i, "mark"]].append(df.loc[i, "symbol"])
                 else:
