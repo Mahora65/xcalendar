@@ -1,7 +1,7 @@
 
 # Stock Calendar Chat Reminder
 
-A automation to scrap SET index (Thailand stock market) calendar from the website, store it, and send reminder message through Line (popular texting app in Thailand) according to waht is on the calendar.
+A automation to scrap SET index (Thailand stock market) calendar from the website, store it, and send reminder message through Line (popular texting app in Thailand) according to what is on the calendar.
 
 ![python](https://img.shields.io/badge/Python-14354C?style=for-the-badge&logo=python&logoColor=white)
 ![heroku](https://img.shields.io/badge/Heroku-430098?style=for-the-badge&logo=heroku&logoColor=white)
