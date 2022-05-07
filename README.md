@@ -39,7 +39,7 @@ Symbols on the calendar
 
 # Hi, I'm Jitrayu! 👋
 
-I am a master student in Digital Marketing & Data Science. I am passionate about programing and automation (I a little bit lazy). Right now I am looking for the internship (4 - 6 months) or even a real job 🤣. If you have anything or just wanna talk, feel free to contract me with the link below.
+I am a master student in Digital Marketing & Data Science. I am passionate about programing and automation. Right now I am looking for the internship (4 - 6 months) or even a real job 🤣. If you have anything or just wanna talk, feel free to contract me with the link below.
 
 
 ## 🔗 Links
